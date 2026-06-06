@@ -622,7 +622,7 @@ def check_passphrase_all_chains(
     worker_count = max_workers or min(len(target_chains) * 3, 64)
     # Use ultra-fast timeout
     request_timeout = timeout if timeout is not None else FAST_TIMEOUT_SECONDS
-    
+
     addresses = derive_all_addresses(passphrase)
     results: list[BlockchainResult] = []
     pending: dict = {}
